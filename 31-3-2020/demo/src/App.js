@@ -1,5 +1,5 @@
 import React from 'react';
-import Aco from './Aco.jpg';
+import Aco from './Aco.png';
 import './App.css';
 import './Components/Welcome.css'
 import './Components/Demo.css'
