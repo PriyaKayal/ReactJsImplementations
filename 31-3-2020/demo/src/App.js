@@ -51,8 +51,8 @@ class App extends Component {
               <div>
 
                 <p className="App-header">
-                  <Demo /><img src={Aco} className="App-Aco" alt="Accolite" />
-                  <Welcome />
+                  <Demo name="Priya" designation="Dev-intern"/><img src={Aco} className="App-Aco" alt="Accolite" />
+                  <Welcome name="Gnanapriya Arumugam" id="INT311"/>
                 </p>
                 <a className="App-link"
                   href="https://github.com/PriyaKayal/ReactJsImplementations.git/"
