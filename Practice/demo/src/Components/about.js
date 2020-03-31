@@ -10,4 +10,5 @@ function About () {
 		</a> 
 	</div> 
 } 
+
 export default About; 

@@ -7,4 +7,5 @@ class Welcome extends Component{
         </div>
     }
 }
+
 export default Welcome

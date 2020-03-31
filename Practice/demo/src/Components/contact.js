@@ -8,5 +8,4 @@ return <address>
 			Chennai.
 		</address> 
 } 
-
 export default Contact; 
