@@ -49,22 +49,22 @@
             "props": {
                 "required": true
             },
-            "checkboxes": [
+            "values": [
                 {
-                  "label" : "priya",
-                  "value" : "kayal",
-                  "checked" : false
+                    "key": 1,
+                    "value": "item1",
+                    "isChecked": false
                 },
                 {
-                    "label" : "Yes",
-                    "value" : "vyes",
-                    "checked" : false
-                  },
-                  {
-                    "label" : "No",
-                    "value" : "vno",
-                    "checked" : false
-                  }
+                    "key": 2,
+                    "value": "item2",
+                    "isChecked": false
+                },
+                {
+                    "key": 3,
+                    "value": "item3",
+                    "isChecked": false
+                }
             ]
         }
     ]

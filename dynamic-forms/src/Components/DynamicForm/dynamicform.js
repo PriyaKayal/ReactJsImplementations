@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import CheckboxGroup from 'react-checkbox-group';
-import CheckboxGroup from './CheckboxGroup/CheckboxGroup';
 class DynamicForm extends Component {
 
     state = {
-
+        checkBoxVal: this.props.model.Form.data.filter((key) => {
+            return key.key == "checkbox"
+        })[0].values
     }
     constructor(props) {
         super(props)
@@ -14,13 +14,20 @@ class DynamicForm extends Component {
         e.preventDefault();
         if (this.props.onSubmit) this.props.onSubmit(this.state)
     }
-    handleCheckboxgroupChange = (updatedUsecaseCBState) => {
-        this.setState({
-            checkboxes: updatedUsecaseCBState,
-        });
-    };
+    handleAllChecked = (event) => {
+        let checkBoxVal = this.state.checkBoxVal
+        checkBoxVal.forEach(e => e.isChecked = event.target.checked)
+        this.setState({ checkBoxVal: checkBoxVal })
+    }
 
-
+    handleCheckChieldElement = (event) => {
+        let checkBoxVal = this.state.checkBoxVal;
+        checkBoxVal.forEach(e => {
+            if (e.value === event.target.value)
+                e.isChecked = event.target.checked
+        })
+        this.setState({ checkBoxVal: checkBoxVal })
+    }
     renderForm = () => {
         let model = this.props.model.Form.data;
         let form = model.map((element) => {
@@ -29,8 +36,6 @@ class DynamicForm extends Component {
             let props = element.props || {};
             let type = element.type;
             let values = element.values || {};
-            let checkboxes = element.checkboxes || {};
-
             if (type == "text" || type == "number") {
                 return (
                     <div className="form-group" key={key}>
@@ -74,33 +79,36 @@ class DynamicForm extends Component {
                             <option value={values}>
                                 {values}
                             </option>)}
-
                     </select>
                 </div>)
             }
 
             if (type == "checkbox") {
-
                 return (<div key={key}>
                     <label key={"label" + key}
                         htmlFor={key}>
                         {label}
                     </label>
+                    <input type="checkbox" {...props} onChange={this.handleAllChecked} value="checkedall" /> Check / Uncheck All
+                    <ul>
+                        {values.map((e, index) => {
+                            return (
+                                <li>
+                                    <input onChange={this.handleCheckChieldElement} type="checkbox"
+                                        checked={e.isChecked} value={e.value} key={"input" + key} /> {e.value}
+                                </li>)
+                        })
+                        }
+                    </ul>
+                </div >)
 
-                    <CheckboxGroup
-                        checkboxes={checkboxes}
-                        onCheckboxGroupChange={this.handleCheckboxgroupChange}
-                    />
-
-                </div>)
             }
         })
         return form
-    }
 
+    }
     render() {
         let title = this.props.model.Form.title || "Dynamic Form";
-
         return (
             <div>
                 <h3>{title}</h3>
@@ -114,5 +122,4 @@ class DynamicForm extends Component {
         )
     }
 }
-
 export default DynamicForm;
