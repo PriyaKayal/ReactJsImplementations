@@ -1,0 +1,71 @@
+{
+    "title": "JDBC Update Activity",
+    "data": [
+        {
+            "key": "name",
+            "label": "Name",
+            "type": "text",
+            "props": {
+                "required": true
+            }
+        },
+        {
+            "key": "desc",
+            "label": "Description",
+            "type": "textarea",
+            "props": {
+                "required": true,
+                "rows": 3,
+                "cols": 40
+            }
+        },
+        {
+            "key": "timeout",
+            "label": "Timeout",
+            "type": "number",
+            "props": {
+                "required": true,
+                "min": 0,
+                "max": 10
+            }
+        },
+        {
+            "key": "dropdown",
+            "label": "Prepared Params",
+            "type": "dropdown",
+            "props": {
+                "required": true
+            },
+            "values": [
+                "value1",
+                "value2",
+                "value3"
+            ]
+        },
+        {
+            "key": "checkbox",
+            "label": "commit",
+            "type": "checkbox",
+            "props": {
+                "required": true
+            },
+            "checkboxes": [
+                {
+                  "label" : "priya",
+                  "value" : "kayal",
+                  "checked" : false
+                },
+                {
+                    "label" : "Yes",
+                    "value" : "vyes",
+                    "checked" : false
+                  },
+                  {
+                    "label" : "No",
+                    "value" : "vno",
+                    "checked" : false
+                  }
+            ]
+        }
+    ]
+}
