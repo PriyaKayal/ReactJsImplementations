@@ -1,0 +1,75 @@
+{
+    "title": "JDBC UPDATE ACTIVITY",
+    "data": [
+        {
+            "key": "timeout",
+            "label": "TIMEOUT",
+            "type": "number",
+            "props": {
+                "required": true,
+                "min": 0,
+                "max": 10
+            }
+        },
+        {
+            "key": "checkbox",
+            "label": "COMMIT",
+            "type": "checkbox",
+            "props": {
+                "required": true
+            },
+            "values": [
+                {
+                    "key": 1,
+                    "value": "item1",
+                    "isChecked": false
+                },
+                {
+                    "key": 2,
+                    "value": "item2",
+                    "isChecked": false
+                },
+                {
+                    "key": 3,
+                    "value": "item3",
+                    "isChecked": false
+                }
+            ]
+        },
+        {
+            "key": "maxrows",
+            "label": "MAX_ROWS",
+            "type": "number",
+            "props": {
+                "required": true,
+                "min": 0,
+                "max": 20
+            }
+        },
+        {
+            "key": "jdbccon",
+            "label": "CONNECTION",
+            "type": "dropdown",
+            "props": {
+                "required": true
+            },
+            "values": [
+                "data Source Link1",
+                "data Source Link2",
+                "data Source Link3"
+            ]
+        },
+        {
+            "key": "sqlstmt",
+            "label": "STATEMENT",
+            "type": "textarea",
+            "isSql" : "Y",
+            "props": {
+                "required": true,
+                "rows": 3,
+                "cols": 40
+            }
+        }
+        
+    ]
+}
